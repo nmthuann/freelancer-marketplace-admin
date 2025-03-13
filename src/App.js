@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
+    Login,
     Ecommerce,
     Orders,
     Calendar,
@@ -35,6 +36,8 @@ const App = () => {
         currentColor,
         themeSettings,
         setThemeSettings,
+        loggedIn,
+        setLoggedIn,
     } = useStateContext();
 
     useEffect(() => {
@@ -49,6 +52,18 @@ const App = () => {
     return (
         <div className={currentMode === "Dark" ? "dark" : ""}>
             <BrowserRouter>
+                {/* <Switch>
+                    <Route exact path="/login">
+                        <Login setLoggedIn={setLoggedIn} />
+                    </Route>
+                    <Route path="/ecommerce">
+                        {loggedIn ? (
+                            <Ecommerce />
+                        ) : (
+                            <Login setLoggedIn={setLoggedIn} />
+                        )}
+                    </Route>
+                </Switch> */}
                 <div className="flex relative dark:bg-main-dark-bg">
                     <div
                         className="fixed right-4 bottom-4"

@@ -533,7 +533,7 @@ export const links = [
         title: "Pages",
         links: [
             {
-                name: "orders",
+                name: "Categories",
                 icon: <AiOutlineShoppingCart />,
             },
             {
